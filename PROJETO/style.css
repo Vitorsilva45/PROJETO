@@ -1,45 +1,51 @@
-/* 1. RESET UNIVERSAL - Zera margens e define o box-sizing correto */
+/* =========================
+   RESET GERAL
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 2. CONFIGURAÇÃO DO FUNDO - Imagem ocupando a tela toda */
+/* =========================
+   FUNDO DA PÁGINA
+========================= */
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-image: url("img/fundo.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Mantém o fundo travado ao rolar a página */
+  background-attachment: fixed;
   min-height: 100vh;
   padding: 20px;
 }
 
-/* 3. CONTAINER DO FORMULÁRIO - Centralizado e com fundo semi-transparente */
+/* =========================
+   CONTAINER PRINCIPAL
+========================= */
 .container {
-  max-width: 800px; /* Um meio-termo ideal entre os 750px e 1000px */
-  width: 80%;
+  max-width: 900px;
+  width: 100%;
   margin: auto;
-  background: rgba(
-    255,
-    255,
-    255,
-    0.7
-  ); /* Branco elegante que deixa o fundo aparecer sutilmente */
+  background: rgba(255, 255, 255, 0.75);
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* 4. ELEMENTOS INTERNOS DO FORMULÁRIO */
+/* =========================
+   TÍTULO
+========================= */
 h1 {
   text-align: center;
   margin-bottom: 30px;
   color: #333;
 }
 
+/* =========================
+   FIELDSET
+========================= */
 fieldset {
   border: 1px solid #ccc;
   padding: 20px;
@@ -49,22 +55,15 @@ fieldset {
 
 legend {
   font-weight: bold;
-  color: #0056b3; /* Azul odontológico */
+  color: #0056b3;
   padding: 0 10px;
 }
 
+/* =========================
+   FORMULÁRIO
+========================= */
 .form-group {
   margin-bottom: 20px;
-}
-
-/* Layout em colunas (Lado a Lado) */
-.form-row {
-  display: flex;
-  gap: 20px;
-}
-
-.form-row .form-group {
-  flex: 1;
 }
 
 label {
@@ -73,17 +72,26 @@ label {
   font-weight: 600;
 }
 
-.form-row .form-group {
-  flex: 1;
+/* =========================
+   LINHAS (GRID FLEX)
+========================= */
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-/* Data de nascimento menor */
-#data_nascimento {
-  width: 150px;
+.form-row .form-group {
+  flex: 1;
+  min-width: 200px;
 }
+
+/* =========================
+   INPUTS E SELECTS
+========================= */
 input,
 select {
-  width: 350px; /* tamanho padrão para todos os campos */
+  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -97,14 +105,18 @@ select:focus {
   border-color: #0056b3;
 }
 
-/* CORREÇÃO: Impede que as bolinhas/caixas fiquem gigantes e esticadas */
+/* =========================
+   RADIO E CHECKBOX
+========================= */
 input[type="radio"],
 input[type="checkbox"] {
   width: auto;
   cursor: pointer;
 }
 
-/* Alinhamento dos Radios e Checkbox */
+/* =========================
+   GRUPO DE RADIOS
+========================= */
 .radio-group {
   display: flex;
   gap: 20px;
@@ -117,7 +129,15 @@ input[type="checkbox"] {
   gap: 8px;
   font-weight: normal;
   cursor: pointer;
-  margin-bottom: 0; /* Remove margem padrão de label aqui */
+}
+
+/* =========================
+   LGPD
+========================= */
+.texto-lgpd {
+  line-height: 1.6;
+  color: #444;
+  font-size: 14px;
 }
 
 .check-lgpd {
@@ -129,13 +149,9 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-.texto-lgpd {
-  line-height: 1.6;
-  color: #444;
-  font-size: 14px;
-}
-
-/* Botão de Enviar */
+/* =========================
+   BOTÃO
+========================= */
 .btn {
   width: 100%;
   background: #0056b3;
@@ -152,11 +168,12 @@ input[type="checkbox"] {
 .btn:hover {
   background: #003d80;
 }
-/* Mantém os campos da mesma linha alinhados */
-.form-row {
-  display: flex;
-  gap: 30px;
-  align-items: flex-start;
-}
 
-/* Tamanho padrão dos campos */
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
