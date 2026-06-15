@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ficha Ortodôntica</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  
+
+<div class="container">
+  <h1>Ficha de Anamnese e Cadastro Ortodôntico</h1>
+
+  <form action="processo.php" method="POST">
+    <fieldset>
+      <legend>1. Dados Pessoais</legend>
+
+      <div class="form-group">
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" name="nome" required />
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="data_nascimento">Data de Nascimento</label>
+          <input type="date" id="data_nascimento" name="data_nascimento" required />
+        </div>
+
+        <div class="form-group">
+          <label>Sexo</label>
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="sexo" value="Masculino" required />
+              Masculino
+            </label>
+            <label>
+              <input type="radio" name="sexo" value="Feminino" /> Feminino
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cpf">CPF</label>
+          <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" required />
+        </div>
+
+        <div class="form-group">
+          <label for="rg">RG</label>
+          <input type="text" id="rg" name="rg" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="endereco">Endereço</label>
+        <input type="text" id="endereco" name="endereco" />
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="telefone">Telefone / WhatsApp</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="profissao">Profissão</label>
+        <input type="text" id="profissao" name="profissao" />
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Queixa Principal</legend>
+      <div class="form-group">
+        <label for="queixa_principal">Qual o principal motivo da consulta?</label>
+        <select id="queixa_principal" name="queixa_principal" required>
+          <option value="">Selecione</option>
+          <option value="Dentes tortos">Dentes tortos</option>
+          <option value="Diastema">Diastema</option>
+          <option value="Dor na ATM">Dor na ATM</option>
+          <option value="Estética do sorriso">Estética do sorriso</option>
+          <option value="Outro">Outro</option>
+        </select>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Histórico Médico</legend>
+      <div class="form-group">
+        <label>Está em tratamento médico atualmente?</label>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="tratamento" value="Sim" required />
+            Sim
+          </label>
+          <label>
+            <input type="radio" name="tratamento" value="Não" /> Não
+          </label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. Consentimento LGPD</legend>
+      <p class="texto-lgpd">
+        Autorizo o armazenamento dos meus dados para fins de tratamento
+        clínico e administrativo, em conformidade com a Lei Geral de
+        Proteção de Dados (LGPD).
+      </p>
+      <label class="check-lgpd">
+        <input type="checkbox" name="lgpd" required /> Concordo com os
+        termos.
+      </label>
+    </fieldset>
+
+    <button type="submit" class="btn">Enviar Cadastro</button>
+  </form>
+</div>
+</body>
+
+</html>
