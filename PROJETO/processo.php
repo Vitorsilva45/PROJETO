@@ -1,19 +1,3 @@
-<script>
-const select = document.getElementById("queixa_principal");
-const campoOutro = document.getElementById("campo_outro");
-const outroMotivo = document.getElementById("outro_motivo");
-
-select.addEventListener("change", function () {
-    if (this.value === "Outro") {
-        campoOutro.style.display = "block";
-        outroMotivo.required = true;
-    } else {
-        campoOutro.style.display = "none";
-        outroMotivo.required = false;
-        outroMotivo.value = "";
-    }
-});
-</script>
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
