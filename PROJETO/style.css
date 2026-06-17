@@ -1,11 +1,19 @@
 .logo{
   text-align:center;
-  margin-bottom:100px;
 }
 
 .logo img{
   max-width:300px;
   height:auto;
+  display:block;
+  margin:0 auto;
+}
+
+.logo h1{
+  margin-top: 0;
+  margin-bottom: 0px;
+  color: #333;
+
 }
 
 /* =========================
