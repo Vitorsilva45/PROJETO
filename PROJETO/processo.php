@@ -16,7 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = limpar($_POST['email'] ?? '');
     $profissao = limpar($_POST['profissao'] ?? '');
     $queixa = limpar($_POST['queixa_principal'] ?? '');
-    $tratamento = limpar($_POST['tratamento'] ?? 'Não informado'); // Capturando o campo esquecido
+    
+    $alergia = limpar($_POST['alergia_medicamento'] ?? '');
+    $qual_alergia = limpar($_POST['qual_alergia'] ?? '');
 
     // Formatando a data de AAAA-MM-DD para DD/MM/AAAA
     $data_nascimento = "";
@@ -103,7 +105,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p><strong>E-mail:</strong> <?php echo $email; ?></p>
         <p><strong>Profissão:</strong> <?php echo $profissao; ?></p>
         <p><strong>Queixa Principal:</strong> <?php echo $queixa; ?></p>
-        <p><strong>Em tratamento médico?</strong> <?php echo $tratamento; ?></p>
+        <p><strong>Alergia a medicamento:</strong> <?php echo $alergia; ?></p>
+
+<?php if ($alergia == "Sim") : ?>
+<p><strong>Qual medicamento:</strong> <?php echo $qual_alergia; ?></p>
+<?php endif; ?>
 
         <a href="index.html" class="btn">Voltar</a>
     </div>
