@@ -3,7 +3,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     function limpar($valor) {
-        return htmlspecialchars(trim($valor));
+        return(trim($valor));
     }
 
     $nome = limpar($_POST['nome'] ?? '');
